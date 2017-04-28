@@ -8,14 +8,18 @@ and open the template in the editor.
     <head>
         <meta charset="UTF-8">
         <title>Cheapsy Deliver</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <style>
+            #numero_paquete{
+                display: none;
+            }
+        </style>
     </head>
     <body>
         <?php
-        require_once 'class/Session.class.php';
         require_once 'class/Paquete.class.php';
-        $sesion = new Sesion();
-
-        $_SESSION['prueba'] = "Hola mundo"
+        require_once 'logica/metodos_generales.php';
+        require_once 'logica/Session.php';
         ?>
         <header>
             <h1>Cheapsy Deliver</h1>
@@ -41,48 +45,57 @@ and open the template in the editor.
                 <textarea name="descripcion_paquete" rows="2" cols="50" maxlength="50" placeholder="Maximo 50 caracteres"></textarea>
 
                 <br>
-                <!-- <button onclick="anadirPaquete()">Añadir</button> -->
-
-                <input type="submit" value="Comparar" name="paquetes" />
+                <input type="submit" value="Añadir paquete" name="paquetes" />
             </form>
 
-            <h3>Paquetes</h3>
             <?php
-            /*
-             * $_POST['paquetes'] -> Contiene los paquetes que posteriormente se guardaran en 
-             * $_SESSION['comparar_paquetes'] para que luego se realice las peticiones a la API
-             */
-
-            /**
-             * La idea es que se envien varios paquetes por POST y luego ir guardando en la variable $_SESSION['comparar_paquetes'] cada paquete
-             * por individual para ir añadiendo de uno en uno con sus tamaños en las peticiones que se harán.
-             */
             //Si hay datos en la variable 'paquetes' en el envio por POST haz...
+
             if (isset($_POST['paquetes'])) {
+                ?>
+                <div id="envio">
+                    <h3>Paquetes</h3>
+                    <?php
+                    /*
+                     * $_POST['paquetes'] -> Contiene los paquetes que posteriormente se guardaran en 
+                     * $_SESSION['comparar_paquetes'] para que luego se realice las peticiones a la API
+                     */
 
-                echo '<h4>Datos formulario</h4><br>';
-                //Datos recibidos del formulario
+                    /**
+                     * La idea es que se envien varios paquetes por POST y luego ir guardando en la variable $_SESSION['comparar_paquetes'] cada paquete
+                     * por individual para ir añadiendo de uno en uno con sus tamaños en las peticiones que se harán.
+                     */
+                    //Datos recibidos del formulario
+                    $ancho = filter_input(INPUT_POST, 'ancho');
+                    $alto = filter_input(INPUT_POST, 'alto');
+                    $profundo = filter_input(INPUT_POST, 'profundo');
+                    $peso = filter_input(INPUT_POST, 'peso');
+                    $descripcion = filter_input(INPUT_POST, 'descripcion_paquete');
 
-                $ancho = filter_input(INPUT_POST, 'ancho');
-                $alto = filter_input(INPUT_POST, 'alto');
-                $profundo = filter_input(INPUT_POST, 'profundo');
-                $peso = filter_input(INPUT_POST, 'peso');
-                $descripcion = filter_input(INPUT_POST, 'descripcion_paquete');
+                    //Creamos Objeto Paquete
+                    $paquete = new Paquete($ancho, $alto, $profundo, $peso, $descripcion);
 
-                $paquete = new Paquete($ancho, $alto, $profundo, $peso, $descripcion);
+                    //Guardamos el array de paquetes una vez tengamos todos los paquetes en la variable sesion
 
-                $medidas_paquete = $paquete->get_medidas_paquete();
-                $medidas_paquetes = array('paquete1' => $medidas_paquete);
+                    $_SESSION['ses_paquetes'][] = $paquete;
+                    
+                    
+                    for ($i = 0; $i < count($_SESSION['ses_paquetes']); $i++) {
+                        $medidas_paquete = $_SESSION['ses_paquetes'][$i]->mostrar_medidas_paquete();
+                        echo '<div>'
+                        . '<span>'
+                        . $medidas_paquete .
+                        '</span><span id="numero_paquete">' . $i . '</span><button onclick="quitarPaquete(this)">X</button>'
+                        . '</div>';
+                    }
 
-                print_r($medidas_paquetes);
+                    //var_dump($_SESSION);
+                    // session_destroy();
+                }
+                ?>
+            </div>
 
-                //$_SESSION['comparar_paquetes'] = $medidas_paquetes;
-                echo '<br><h4>Sesion</h4>';
-                print_r($_SESSION);
-            }
-
-            
-            ?>
         </div>
+        <script src="/js/formulario.js"></script>
     </body>
 </html>

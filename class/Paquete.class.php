@@ -59,7 +59,7 @@ class Paquete {
     function get_peso() {
         return $this->peso;
     }
-    
+
     /**
      * Metodo que devuelve una string con la descripcion del paquete
      * @return string
@@ -67,25 +67,37 @@ class Paquete {
     function get_descripcion() {
         return $this->descripcion;
     }
-    
+
     /**
      * Función que devuelve un array con todas las medidas del paquete
      * @return array
      */
-    function get_medidas_paquete(){
+    function get_medidas_paquete() {
         $ancho = $this->get_ancho();
         $alto = $this->get_alto();
         $profundo = $this->get_profundo();
         $peso = $this->get_peso();
         $descripcion = $this->get_descripcion();
-        
-        $medidas_paquete = array(   "anchura" => $ancho,
-                                    "altura" => $alto,
-                                    "profundidad" => $profundo,
-                                    "peso" => $peso,
-                                    "descripcion" => $descripcion);
-                
+
+        $medidas_paquete = array(
+            "anchura" => $ancho,
+            "altura" => $alto,
+            "profundidad" => $profundo,
+            "peso" => $peso,
+            "descripcion" => $descripcion);
+
         return $medidas_paquete;
+    }
+
+    function mostrar_medidas_paquete() {
+        $medidas = '';
+        $paquete = $this->get_medidas_paquete();
+        foreach ($paquete as $dato => $valor) {
+            $medidas .= $dato . ': ' . $valor . ' ';
+        }
+        
+        return $medidas;
+        
     }
 
 }
