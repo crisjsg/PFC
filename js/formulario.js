@@ -4,7 +4,7 @@
 
 var quitarPaquete = function (elemento) {
     var paquete = elemento.previousSibling.textContent;
-    //Para quitar el localizador de la lista
+    //Para quitar el paquete de la lista
     elemento.parentElement.parentElement.removeChild(elemento.parentElement);
     borrarDatosSesion(paquete);
 };
@@ -15,9 +15,9 @@ function borrarDatosSesion(numero_paquete) {
         url: "borrar_datos_sesion.php",
         cache: false,
         method: "POST",
-        data: "paquete=" + numero_paquete,
+        data: "numero_paquete=" + numero_paquete,
         dataType: "text"
-    }).done(function (paquete) {
+    }).done(function () {
         console.log("Se ha borrado el paquete " + numero_paquete);
     }).fail(function (jqXHR, textStatus, errorThrown) {
         console.log(textStatus, errorThrown);
