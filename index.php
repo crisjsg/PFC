@@ -91,6 +91,8 @@ and open the template in the editor.
                         '</span><span id="numero_paquete">' . $i . '</span><button onclick="quitarPaquete(this)">X</button>'
                         . '</div>';
                     }
+                    echo '<br>';
+                    echo '<a id="boton_siguiente" href="datos_personales.php" >Siguiente</a>';
                 }else{
                     $_POST['paquetes'] = NULL;
                     session_destroy();
@@ -100,6 +102,13 @@ and open the template in the editor.
             </div>
 
         </div>
+        
         <script src="/js/formulario.js"></script>
+        
+        <!-- 
+        Idea: Poner al final de la página con footer (habría que sopesar si habrá un footer) un mini formulario 
+        de sugerencias para la página por parte del cliente con los campos: correo, sugerencia y el boton de envío. Esto lo recibiría a mi correo.
+        
+        -->
     </body>
 </html>
