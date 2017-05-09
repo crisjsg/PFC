@@ -19,7 +19,7 @@ and open the template in the editor.
         <?php
         require_once 'class/Paquete.class.php';
         require_once 'logica/metodos_generales.php';
-        require_once 'logica/Session.php';
+        require_once 'logica/session.php';
         ?>
         <header>
             <h1>Cheapsy Deliver</h1>
@@ -29,22 +29,20 @@ and open the template in the editor.
         <div id="formulario">
             <h3>Formulario</h3>
             <form name="formulario_datos_paquetes" method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
-
-                <br>
                 <label>Ancho*:
-                    <input type="number" name="ancho" placeholder="Anchura del paquete (cm)" min="1" max="300" oninvalid="setCustomValidity(errorAnchura)" oninput="setCustomValidity('')"  required/>
+                    <input type="number" name="ancho" placeholder="(cm)" min="1" max="300" oninvalid="setCustomValidity(errorAnchura)" oninput="setCustomValidity('')"  required/>
                 </label>
                 <br>
                 <label>Alto*:
-                    <input type="number" name="alto" placeholder="Altura del paquete (cm)" min="1" max="300" oninvalid="setCustomValidity(errorAltura)" oninput="setCustomValidity('')" required/>
+                    <input type="number" name="alto" placeholder="(cm)" min="1" max="300" oninvalid="setCustomValidity(errorAltura)" oninput="setCustomValidity('')" required/>
                 </label>
                 <br>
                 <label>Profundo*:
-                    <input type="number" name="profundo" placeholder="Profundidad del paquete (cm)" min="1" max="300" oninvalid="setCustomValidity(errorProfundidad)" oninput="setCustomValidity('')" required/>
+                    <input type="number" name="profundo" placeholder="(cm)" min="1" max="300" oninvalid="setCustomValidity(errorProfundidad)" oninput="setCustomValidity('')" required/>
                 </label>
                 <br>
                 <label>Peso*:
-                    <input type="number" name="peso" placeholder="Peso del paquete (kg)" min="1" max="300" oninvalid="setCustomValidity(errorPeso)" oninput="setCustomValidity('')" required/>
+                    <input type="number" name="peso" placeholder="(kg)" min="1" max="300" oninvalid="setCustomValidity(errorPeso)" oninput="setCustomValidity('')" required/>
                 </label>
                 <br>
                 <label>Corta descripción del contenido del paquete:
@@ -72,13 +70,9 @@ and open the template in the editor.
                      * por individual para ir añadiendo de uno en uno con sus tamaños en las peticiones que se harán.
                      */
                     //Datos recibidos del formulario
-                    $ancho = filter_input(INPUT_POST, 'ancho');
-                    $alto = filter_input(INPUT_POST, 'alto');
-                    $profundo = filter_input(INPUT_POST, 'profundo');
-                    $peso = filter_input(INPUT_POST, 'peso');
-                    $descripcion = filter_input(INPUT_POST, 'descripcion_paquete');
+                    $datos_paquetes = filtrar_datos_post($_POST);
                     //Creamos Objeto Paquete
-                    $paquete = new Paquete($ancho, $alto, $profundo, $peso, $descripcion);
+                    $paquete = new Paquete($datos_paquetes['ancho'], $datos_paquetes['alto'], $datos_paquetes['profundo'], $datos_paquetes['peso'], $datos_paquetes['descripcion_paquete']);
                     //Guardamos el array de paquetes una vez tengamos todos los paquetes en la variable sesion
                     $_SESSION['ses_paquetes'][] = $paquete;
 

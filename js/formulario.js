@@ -32,7 +32,7 @@ var quitarPaquete = function (elemento) {
 function borrarDatosSesion(numero_paquete) {
 
     $.ajax({
-        url: "borrar_datos_sesion.php",
+        url: "logica/borrar_datos_sesion.php",
         cache: false,
         method: "POST",
         data: "numero_paquete=" + numero_paquete,
