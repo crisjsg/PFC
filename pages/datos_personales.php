@@ -21,7 +21,13 @@
 
     </head>
     <body>
-        <?php require_once 'logica/session.php'; ?>
+        <?php 
+        require_once '../class/Paquete.class.php';
+        require_once '../logica/session.php'; 
+        
+        var_dump($_SESSION['ses_paquetes']);
+        
+        ?>
         <header>
             <h1>Cheapsy Deliver</h1>
             <h2>Comparar, escoger, enviar</h2>
@@ -30,7 +36,7 @@
         <!-- Idea: 
             Información del remitente y destinatario (podría ponerse esto en unas "Migas de pan" para el proceso de entrada de los datos en los formularios
         -->
-        <p>Solo necesitamos esta información principalmente para concretar más y mostrar un precio más preciso para tu envío.</p>
+        <p>Solo necesitamos esta información para concretar un pelín más y mostrar un precio más preciso para tu envío.</p>
         <form name="formulario_datos_usuario" action="resultado.php" method="POST">
             <!-- 
             Idea 1: Conseguir mediante JavaScript que muestre o chequee si el codigo postal que se introduce es valido para la ciudad
@@ -39,7 +45,7 @@
             -->
             <h3>Origen</h3>
             Dirección: <br>
-            <input id="autocompletarOrigen" placeholder="Introduce tu dirección de origen" type="text">
+            <input id="autocompletarOrigen" placeholder="Introduce tu dirección de origen" type="text" onkeydown='selecting_key(event);'>
             <br>
             Ciudad*: <input type="text" name="ciudad_origen" id="ciudad_origen" disabled="true"/> <br>
             Código postal*: <input type="text" name="codigo_postal_origen" id="codigo_postal_origen" disabled="true"/><br>
@@ -48,7 +54,7 @@
 
             <h3>Destino</h3>
             Dirección: <br>
-            <input id="autocompletarDestino" placeholder="Introduce tu dirección de destino" type="text">
+            <input id="autocompletarDestino" placeholder="Introduce tu dirección de destino" type="text" onkeydown='selecting_key(event);'>
             <br>
             Ciudad*: <input type="text" name="ciudad_destino" id="ciudad_destino" disabled="true"/> <br>
             Código postal*: <input type="text" name="codigo_postal_destino" id="codigo_postal_destino" disabled="true"/><br>
@@ -67,7 +73,7 @@
             Email remitente: <input type="email" name="email_remitente" /><br>
             Email destinatario: <input type="email" name="email_destinatario" />
             <br> 
-                        <!--
+            <!--
             <br>
             ¿Quieres que te lo enviemos por correo? 
             Sí<input type="radio" name="eleccion" value="si" style="margin-right: 5px;">
@@ -76,7 +82,8 @@
             <input name="submit" type="submit" value="Comparar">
         </form>
 
-        <script src="/js/autocompletarLocalizacion.js"></script>
+        <script src="../js/autocompletarLocalizacion.js"></script>
+        <script src="/js/formulario.js"></script>
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBm-E7KVUA2jQbyCwMxsyHjD30BpNTONgA&libraries=places&callback=initAutocomplete"
         async defer></script>
     </body>

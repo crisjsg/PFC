@@ -7,21 +7,25 @@
 
 var placeSearch, autocompletarOrigen, autocompletarDestino;
 var componentFormOrigen = {
-    //Calle
+    //Ciudad
     ciudad_origen: {dato: 'locality', tipo_dato: 'long_name'},
     //Pais
     pais_origen: {dato: 'country', tipo_dato: 'long_name'},
     //Codigo Postal
-    codigo_postal_origen: {dato: 'postal_code', tipo_dato: 'short_name'}
+    codigo_postal_origen: {dato: 'postal_code', tipo_dato: 'short_name'},
+    //Calle
+    calle_origen:   {dato: 'route', tipo_dato: 'long_name'}
 };
 
 var componentFormDestino = {
-    //Calle
+    //Ciudad
     ciudad_destino: {dato: 'locality', tipo_dato: 'long_name'},
     //Pais
     pais_destino: {dato: 'country', tipo_dato: 'long_name'},
     //Codigo Postal
-    codigo_postal_destino: {dato: 'postal_code', tipo_dato: 'short_name'}
+    codigo_postal_destino: {dato: 'postal_code', tipo_dato: 'short_name'},
+    //Calle
+    calle_destino: {dato: 'route', tipo_dato: 'long_name'}
 };
 
 function initAutocomplete() {

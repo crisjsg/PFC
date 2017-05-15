@@ -9,11 +9,11 @@
  * Variables que se utilicen para el formulario
  */
 
-    // Variables con los mensajes de error
-    var errorAnchura = "No has introducido una anchura valida";
-    var errorAltura  = "No has introducido una altura";
-    var errorProfundidad  = "No has introducido una profundidad valida";
-    var errorPeso  = "No has introducido un peso valido";
+// Variables con los mensajes de error
+var errorAnchura = "No has introducido una anchura valida";
+var errorAltura = "No has introducido una altura";
+var errorProfundidad = "No has introducido una profundidad valida";
+var errorPeso = "No has introducido un peso valido";
 
 
 /**
@@ -42,4 +42,10 @@ function borrarDatosSesion(numero_paquete) {
     }).fail(function (jqXHR, textStatus, errorThrown) {
         console.log(textStatus, errorThrown);
     });
+}
+
+function selecting_key(whatKey) {
+    if (whatKey.keyCode === 13) {
+        whatKey.preventDefault();
+    }
 }

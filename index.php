@@ -21,10 +21,15 @@ and open the template in the editor.
         require_once 'logica/metodos_generales.php';
         require_once 'logica/session.php';
         ?>
-        <header>
-            <h1>Cheapsy Deliver</h1>
-            <h2>Comparar, escoger, enviar</h2>
-        </header>
+        <h1>Cheapsy Deliver</h1>
+        <p>Comparar, escoger, enviar</p>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="pages/quienes_somos.php">Quienes somos</a></li>
+                <li><a href="pages/contacto.php">Contacto</a></li>
+            </ul>
+        </nav>
 
         <div id="formulario">
             <h3>Formulario</h3>
@@ -86,23 +91,46 @@ and open the template in the editor.
                         . '</div>';
                     }
                     echo '<br>';
-                    echo '<a id="boton_siguiente" href="datos_personales.php" >Siguiente</a>';
-                }else{
+                    echo '<a id="boton_siguiente" href="pages/datos_personales.php" >Siguiente</a>';
+                    var_dump($_SESSION['ses_paquetes']);
+                } else {
                     $_POST['paquetes'] = NULL;
                     session_destroy();
                     //$_SESSION['ses_paquetes'] = NULL;
                 }
                 ?>
             </div>
-
+        </div>
+        <div id="tranportistas">
+            <h3>Empresas transportistas</h3>
+            <p>Empresas tranportistas con las que comparamos precios</p><hr>
+            <ul id="empresas">
+                <!-- Idea: Poner iconos de las emprsas en color grisaceo y con el hover consiga el color de su logo -->
+                <li><a href="https://www.aramex.com/">ARAMEX</a></li>
+                <li><a href="https://www.tnt.com/express/es_es/site/home.html">TNT</a></li>
+                <li><a href="http://www.bring.com/">Bring</a></li>
+                <li><a href="http://www.dhl.es/">DHL</a></li>
+                <li><a href="https://www.fedex.com/">FedEx</a></li>
+                <li><a href="http://www.yodel.co.uk/">Yodel</a></li>
+            </ul>
         </div>
         
-        <script src="/js/formulario.js"></script>
         
         <!-- 
-        Idea: Poner al final de la página con footer (habría que sopesar si habrá un footer) un mini formulario 
-        de sugerencias para la página por parte del cliente con los campos: correo, sugerencia y el boton de envío. Esto lo recibiría a mi correo.
-        
+               Idea: Poner al final de la página con footer (habría que sopesar si habrá un footer) un mini formulario 
+               de sugerencias para la página por parte del cliente con los campos: correo, sugerencia y el boton de envío. Esto lo recibiría a mi correo.
+               
         -->
+        <footer>
+            <nav>
+                <a href="pages/quienes_somos.php">Quienes somos</a> -
+                <a href="pages/tecnologias.php">Tecnologias</a> -
+                <a href="pages/contacto.php">Contactanos</a>
+            </nav>
+        </footer>
+
+        <script src="/js/formulario.js"></script>
+
+
     </body>
 </html>
