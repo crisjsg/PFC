@@ -37,8 +37,21 @@ var_dump($datos_usuario);
                 
                 /*MIRAR DE COGER EN EL CAMPO DIRECCION LO QUE SE INTRODUCE YA QUE ES POSIBLE QUE EL CAMPO CALLE SEA ESE, CHEQUEAR CON EL EJEMPLO DE GOOGLE*/
                 
-                $body = '{"async":false,"shipper_accounts":[{"id":"'. $id_repartidor_api .'"}],"shipment":{"parcels":[{"description":"'. $datos_paquete['descripcion'] .'","box_type":"custom","weight":{"value":' . $datos_paquete['peso'] . ',"unit":"kg"},"dimension":{"width":' . $datos_paquete['anchura'] . ',"height":' . $datos_paquete['altura'] . ',"depth":' . $datos_paquete['profundidad'] . ',"unit":"cm"},"items":[{"description":"envio","origin_country":"' . pasar_pais_a_codigo($datos_usuario['pais_origen']) . '","quantity":1,"price":{"amount":3,"currency":"EUR"},"weight":{"value":' . $datos_paquete['peso'] . ',"unit":"kg"}}]}],'
-                . '"ship_from":{"contact_name":"'.$datos_usuario['nombre'].' ' . $datos_usuario['apellido'] .'",'
+                $body = '{"async":false,"shipper_accounts":[{"id":"'. $id_repartidor_api .'"}],'
+                        . '"shipment":{'
+                            . '"parcels":['
+                            . '{"description":"'. $datos_paquete['descripcion'] .'",'
+                            . '"box_type":"custom",'
+                            . '"weight":{"value":' . $datos_paquete['peso'] . ',"unit":"kg"},'
+                            . '"dimension":{"width":' . $datos_paquete['anchura'] . ','
+                            . '             "height":' . $datos_paquete['altura'] . ','
+                            . '             "depth":' . $datos_paquete['profundidad'] . ',"unit":"cm"},'
+                            . '"items":[{"description":"envio","origin_country":"' . pasar_pais_a_codigo($datos_usuario['pais_origen']) . '","quantity":1,"price":{"amount":3,"currency":"EUR"},"weight":{"value":' . $datos_paquete['peso'] . ',"unit":"kg"}}]}'
+                            . '],';//Acaba los datos del paquete
+                
+                
+                // Parte del JSON con los datos del usuario
+                $body  .= '"ship_from":{"contact_name":"'.$datos_usuario['nombre'].' ' . $datos_usuario['apellido'] .'",'
                         . '     "street1": "'.$datos_usuario['calle_origen'].'",'
                         . '     "city":"'.$datos_usuario['ciudad_origen'].'",'
                         . '     "postal_code":"'.$datos_usuario['codigo_postal_origen'].'",'

@@ -17,7 +17,7 @@ and open the template in the editor.
     </head>
     <body>
         <?php
-        require_once 'class/Paquete.class.php';
+        require_once 'logica/class/Paquete.class.php';
         require_once 'logica/metodos_generales.php';
         require_once 'logica/session.php';
         ?>

@@ -89,6 +89,10 @@ class Paquete {
         return $medidas_paquete;
     }
 
+    /**
+     * Función que devuelve una string con todas las medidas del paquete
+     * @return string
+     */
     function mostrar_medidas_paquete() {
         $medidas = '';
         $paquete = $this->get_medidas_paquete();

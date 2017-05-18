@@ -22,7 +22,7 @@
     </head>
     <body>
         <?php 
-        require_once '../class/Paquete.class.php';
+        require_once '../logica/class/Paquete.class.php';
         require_once '../logica/session.php'; 
         
         var_dump($_SESSION['ses_paquetes']);
@@ -37,7 +37,7 @@
             Información del remitente y destinatario (podría ponerse esto en unas "Migas de pan" para el proceso de entrada de los datos en los formularios
         -->
         <p>Solo necesitamos esta información para concretar un pelín más y mostrar un precio más preciso para tu envío.</p>
-        <form name="formulario_datos_usuario" action="resultado.php" method="POST">
+        <form name="formulario_datos_usuario" action="resultado_multiple.php" method="POST">
             <!-- 
             Idea 1: Conseguir mediante JavaScript que muestre o chequee si el codigo postal que se introduce es valido para la ciudad
             Idea 2: En la API no del todo obligatorio ambos inputs, con uno basta pero por lo menos debe de haber uno. Chequear con JS si hay uno con datos y si lo está 
