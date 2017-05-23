@@ -1,5 +1,6 @@
 <?php
 require_once '../logica/class/Paquete.class.php';
+require_once '../logica/class/Peticion.class.php';
 require_once '../logica/Session.php';
 require_once '../logica/metodos_generales.php';
 
@@ -7,11 +8,6 @@ $paquetes = $_SESSION['ses_paquetes'];
 $datos_usuario = filtrar_datos_post($_POST);
 
 require_once '../logica/conf/datos_peticion.php';
-
-
-
-//var_dump($paquetes);
-//var_dump($datos_usuario);
 ?>
 <html>
     <head>
@@ -26,11 +22,20 @@ require_once '../logica/conf/datos_peticion.php';
             </header>
             <div id="resultado">
                 <h2>Resultado</h2>
-                <?php
+<?php
+include '../logica/peticion.php';
 
-                echo 'JSON enviado<br>';
-                echo $body;
-                ?>
+foreach ($json_empresas as $json) {
+    echo $json;
+}
+echo '<hr>';
+foreach ($respuestas as $empresa => $respuesta) {
+    echo '<h2>Respuesta: '. $empresa . '</h2><br>';
+    echo $respuesta;
+    echo '<br>';
+}
+
+?>
             </div>
         </div>
 

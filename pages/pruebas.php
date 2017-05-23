@@ -22,14 +22,6 @@ and open the template in the editor.
             $peticiones[] = new Peticion($nombre_empresa);
         }
 
-        foreach ($peticiones as $peticion) {
-            $api_key = $peticion->get_api_key_empresa();
-            echo $api_key;
-            echo ' ';
-            $empresa = $peticion->get_empresa_reparto();
-            echo $empresa;
-            echo '<br>';
-        }
 
         /* CREACION DE JSON MULTIPLES */
         $url = 'https://sandbox-api.postmen.com/v3/rates';
