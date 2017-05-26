@@ -32,7 +32,7 @@ class Paquete {
      * Metodo que devuelve una string con la anchura
      * @return string
      */
-    function get_ancho() {
+    public function get_ancho() {
         return $this->ancho;
     }
 
@@ -40,7 +40,7 @@ class Paquete {
      * Metodo que devuelve una string con la altura
      * @return string
      */
-    function get_alto() {
+    public function get_alto() {
         return $this->alto;
     }
 
@@ -48,7 +48,7 @@ class Paquete {
      * Metodo que devuelve una string con la profundidad
      * @return string
      */
-    function get_profundo() {
+    public function get_profundo() {
         return $this->profundo;
     }
 
@@ -56,7 +56,7 @@ class Paquete {
      * Metodo que devuelve una string con el peso
      * @return string
      */
-    function get_peso() {
+    public function get_peso() {
         return $this->peso;
     }
 
@@ -64,7 +64,7 @@ class Paquete {
      * Metodo que devuelve una string con la descripcion del paquete
      * @return string
      */
-    function get_descripcion() {
+    public function get_descripcion() {
         return $this->descripcion;
     }
 
@@ -72,7 +72,7 @@ class Paquete {
      * Función que devuelve un array con todas las medidas del paquete
      * @return array
      */
-    function get_medidas_paquete() {
+    public function get_medidas_paquete() {
         $ancho = $this->get_ancho();
         $alto = $this->get_alto();
         $profundo = $this->get_profundo();
@@ -93,7 +93,7 @@ class Paquete {
      * Función que devuelve una string con todas las medidas del paquete
      * @return string
      */
-    function mostrar_medidas_paquete() {
+    public function mostrar_medidas_paquete() {
         $medidas = '';
         $paquete = $this->get_medidas_paquete();
         foreach ($paquete as $dato => $valor) {
@@ -102,6 +102,41 @@ class Paquete {
         
         return $medidas;
         
+    }
+
+    /**
+     * Metodo que devuelve los datos del objeto paquete como array asociativo
+     * para su posterior construcción en el JSON
+     * @return array
+     */
+    public function get_paquete() {
+        $paquete_json = array() ;
+        $paquete_json['description'] = $this->descripcion;
+        $paquete_json['box_type'] = 'custom';
+        $paquete_json['weight'] = array(
+            'value' => intval($this->peso),
+            'unit' => 'kg'
+        );
+        $paquete_json['dimension'] = array(
+            'width' => intval($this->ancho),
+            'height' => intval($this->alto),
+            'depth' => intval($this->profundo),
+            'unit' => 'cm'
+        );
+        
+        $paquete_json['items'][] = array(
+            'description' => 'envio',
+            'quantity' => 1,
+            'price' => array(
+                'amount' => 3,
+                'currency' => 'EUR'
+            ),
+            'weight' => array(
+                'value' => intval($this->peso),
+                'unit' => 'kg'
+            )
+        );
+        return $paquete_json;
     }
 
 }
