@@ -8,7 +8,7 @@
             /* Optional: Makes the sample page fill the window. */
             html, body {
                 height: 100%;
-                margin: 0 0 0 10px;
+                margin: 0 0 10px 10px;
                 padding: 0;
             }
         </style>
@@ -25,7 +25,7 @@
         require_once '../logica/class/Paquete.class.php';
         require_once '../logica/session.php'; 
         
-        var_dump($_SESSION['ses_paquetes']);
+        //var_dump($_SESSION['ses_paquetes']);
         
         ?>
         <header>

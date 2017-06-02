@@ -92,7 +92,7 @@ and open the template in the editor.
                     }
                     echo '<br>';
                     echo '<a id="boton_siguiente" href="pages/datos_personales.php" >Siguiente</a>';
-                    var_dump($_SESSION['ses_paquetes']);
+                    //var_dump($_SESSION['ses_paquetes']);
                 } else {
                     $_POST['paquetes'] = NULL;
                     session_destroy();

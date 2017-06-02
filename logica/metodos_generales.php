@@ -19,4 +19,15 @@ function pasar_pais_a_codigo($pais) {
     return $codigos_paises[$pais];
 };
 
+
+function convertir_moneda($cantidad, $moneda_origen, $moneda_destino){
+    $url  = "https://www.google.com/finance/converter?a=$cantidad&from=$moneda_origen&to=$moneda_destino";
+    $datos = file_get_contents($url);
+    preg_match("/<span class=bld>(.*)<\/span>/",$datos, $conversion);
+    $conversion = preg_replace("/[^0-9.]/", "", $conversion[1]);
+    return round($conversion, 3);
+}
+
+
+
 ?>
