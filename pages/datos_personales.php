@@ -42,8 +42,8 @@
             Dirección: <br>
             <input id="autocompletarOrigen" placeholder="Introduce tu dirección de origen" type="text" onkeydown='selecting_key(event);'>
             <br>
-            Ciudad*: <input type="text" name="ciudad_origen" id="ciudad_origen" disabled="true"/> <br>
-            Código postal*: <input type="text" name="codigo_postal_origen" id="codigo_postal_origen" disabled="true"/><br>
+            Ciudad*: <input type="text" name="ciudad_origen" id="ciudad_origen" disabled="true" required/> <br>
+            Código postal*: <input type="text" name="codigo_postal_origen" id="codigo_postal_origen" disabled="true" required/><br>
             Calle: <input type="text" name="calle_origen" id="calle_origen" disabled="true"/><br>
             País: <input type="text" name="pais_origen" id="pais_origen" disabled="true"/><br>
 

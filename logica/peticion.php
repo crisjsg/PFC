@@ -51,13 +51,14 @@ foreach ($respuestas as $empresa => $respuesta) {
     echo '<br>';
     echo '<br>';
 }
-*/
+
 
 echo '<h2>Respuestas</h2>';
-
+*/
 
 $tarifas_empresa = array();
 $precios_correctos = array(); //Array que guardará los precios conversos a la moneda EUR
+$array_ext_tarifas = array();
 
 //De las respuestas iteramos por cada respuesta de cada empresa
 foreach ($respuestas as $json_respuesta) {
@@ -89,73 +90,4 @@ for ($i = 0; $i < count($array_ext_tarifas); $i++) {
     }
 }
 
-var_dump($precios_correctos);
-
-
-
-
-
-
-
-
-
-/*
-$precios = array();
-foreach ($respuestas as $empresa => $json_respuesta) {
-    $respuesta = new Respuesta($json_respuesta);
-    $precios = $respuesta->sacar_precios_respuesta();
-    echo 'Empresa ' . $empresa . '<br>';
-    print_r($precios);
-    echo '<br>';
-}
-
-
-*/
-
-
-
-
-
-
-
-
-
-
-
-/*
-foreach ($respuestas as $empresa => $respuesta) {
-    //Convierte el string JSON a un array asociativo.
-    $json_array = json_decode($respuesta, true);
-
-    $ok = $json_array['meta']['message'];
-    $resultado = $json_array['meta']['code'];
-
-    //Si la respuesta es OK...
-    if ($ok === 'OK' && $resultado === 200) {
-        $datos = $json_array['data'];
-        $tarifas = $datos['rates'];
-        $nombre_empresa = $tarifas[0]['shipper_account']['slug']; // El nombre de la empresa siempre es el mismo.
-
-        foreach ($tarifas as $tarifa) {
-            $servicio = $tarifa['service_name'];
-            $precio = $tarifa['total_charge']['amount'];
-            //Si el servicio esta seteado y ya existe en el array...
-            if (isset($precios[$nombre_empresa][$servicio]) && array_key_exists($servicio, $precios[$nombre_empresa])) {
-                $precio_antiguo = $precios[$nombre_empresa][$servicio];
-                //Y este precio es más bajo que el que ya existia...
-                if ($precio < $precio_antiguo){
-                    //Guardamos el precio más barato
-                    $precios[$nombre_empresa][$servicio] = $precio;
-                }else{
-                    //No sustituye el precio antiguo al no ser más barato
-                }
-            } else {
-                //Como no existia lo introducimos como nuevo precio para ese sericio
-                $precios[$nombre_empresa][$servicio] = $precio;
-            }
-        }
-    }
-}
-
-print_r($precios);
- * */
+//var_dump($precios_correctos);

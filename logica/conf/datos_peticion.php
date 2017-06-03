@@ -1,7 +1,7 @@
 <?php
 
 //var_dump($datos_usuario);
-
+/*
 $id_repartidor_api = 'a2b8a970-6fe5-4491-b9e2-8e3a6d17cd08';
 
 $body = '{"async":false,"shipper_accounts":[{"id":"' . $id_repartidor_api . '"}],'
@@ -40,3 +40,4 @@ $body .= '"ship_from":{"contact_name":"' . $datos_usuario['nombre'] . ' ' . $dat
         . '   "email":"' . $datos_usuario['email_destinatario'] . '",'
         . '   "type":"residential"}}}';
 
+*/
