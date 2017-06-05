@@ -11,7 +11,7 @@ require_once '../logica/class/Precio.class.php';
 $empresas = array('aramex', 'bring', 'dhl', 'fedex', 'tnt', 'yodel');
 $respuestas = array();
 $usuario = new UsuarioRQ($datos_usuario);
-// La variable con los datos de los paquetes estan en "resultado_multiple.php" 
+// La variable con los datos de los paquetes estan en "resultado.php" 
 // como $paquetes pero se pueden recoger aun desde ahí.
 
 
@@ -27,35 +27,8 @@ foreach ($array_json_peticion as $empresa => $json) {
     $peticion = new Peticion($json);
     $respuestas[$empresa] = $peticion->enviar_peticion();
 }
-    
-    
-/* 
-echo '<h2>JSON por empresa</h2>';
-foreach ($array_json_peticion as $empresa => $json) {
-    echo 'JSON empresa ' . $empresa . '<br>';
-    echo $json;
-    echo '<br>';
-    echo '<br>';
-    echo '<br>';
-}
- * 
- */
-//print_r($array_json_peticion['aramex']);
 
-/*
-echo '<h2>Respuestas JSON</h2>';
-foreach ($respuestas as $empresa => $respuesta) {
-    echo 'Respuesta empresa ' . $empresa . '<br>';
-    echo $respuesta;
-    echo '<br>';
-    echo '<br>';
-    echo '<br>';
-}
-
-
-echo '<h2>Respuestas</h2>';
-*/
-
+// *** PARTE DE TRATADO DE LA INFORMACION ***
 $tarifas_empresa = array();
 $precios_correctos = array(); //Array que guardará los precios conversos a la moneda EUR
 $array_ext_tarifas = array();
@@ -89,5 +62,7 @@ for ($i = 0; $i < count($array_ext_tarifas); $i++) {
         }
     }
 }
+
+$precios_correctos_ordenados = asort($precios_correctos, 1); //Ordenar array asociativo de forma numerica segun su valor
 
 //var_dump($precios_correctos);

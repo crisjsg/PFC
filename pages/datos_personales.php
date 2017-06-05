@@ -25,19 +25,14 @@
         require_once '../logica/class/Paquete.class.php';
         require_once '../logica/session.php'; 
         
-        //var_dump($_SESSION['ses_paquetes']);
-        
         ?>
         <header>
             <h1>Cheapsy Deliver</h1>
             <h2>Comparar, escoger, enviar</h2>
         </header>
         <h2>¡Estas a un paso de comparar!</h2>
-        <!-- Idea: 
-            Información del remitente y destinatario (podría ponerse esto en unas "Migas de pan" para el proceso de entrada de los datos en los formularios
-        -->
         <p>Solo necesitamos esta información para concretar un pelín más y mostrar un precio más preciso para tu envío.</p>
-        <form name="formulario_datos_usuario" action="resultado_multiple.php" method="POST">
+        <form name="formulario_datos_usuario" action="resultado.php" method="POST">
             <h3>Origen</h3>
             Dirección: <br>
             <input id="autocompletarOrigen" placeholder="Introduce tu dirección de origen" type="text" onkeydown='selecting_key(event);'>
@@ -63,7 +58,7 @@
             Email remitente: <input type="email" name="email_remitente" /><br>
             Email destinatario: <input type="email" name="email_destinatario" />
             <br>
-            <input name="submit" type="submit" value="Comparar">
+            <input name="submit" type="submit" value="Buscar">
         </form>
 
         <script src="../js/autocompletarLocalizacion.js"></script>

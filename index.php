@@ -84,7 +84,7 @@ and open the template in the editor.
 
                     for ($i = 0; $i < count($_SESSION['ses_paquetes']); $i++) {
                         $medidas_paquete = $_SESSION['ses_paquetes'][$i]->mostrar_medidas_paquete();
-                        echo '<div>'
+                        echo '<div class="paquete">'
                         . '<span>'
                         . $medidas_paquete .
                         '</span><span id="numero_paquete">' . $i . '</span><button onclick="quitarPaquete(this)">X</button>'
@@ -92,11 +92,9 @@ and open the template in the editor.
                     }
                     echo '<br>';
                     echo '<a id="boton_siguiente" href="pages/datos_personales.php" >Siguiente</a>';
-                    //var_dump($_SESSION['ses_paquetes']);
                 } else {
                     $_POST['paquetes'] = NULL;
                     session_destroy();
-                    //$_SESSION['ses_paquetes'] = NULL;
                 }
                 ?>
             </div>
@@ -105,7 +103,6 @@ and open the template in the editor.
             <h3>Empresas transportistas</h3>
             <p>Empresas tranportistas con las que comparamos precios</p><hr>
             <ul id="empresas">
-                <!-- Idea: Poner iconos de las emprsas en color grisaceo y con el hover consiga el color de su logo -->
                 <li><a href="https://www.aramex.com/">ARAMEX</a></li>
                 <li><a href="https://www.tnt.com/express/es_es/site/home.html">TNT</a></li>
                 <li><a href="http://www.bring.com/">Bring</a></li>
@@ -115,12 +112,6 @@ and open the template in the editor.
             </ul>
         </div>
         
-        
-        <!-- 
-               Idea: Poner al final de la página con footer (habría que sopesar si habrá un footer) un mini formulario 
-               de sugerencias para la página por parte del cliente con los campos: correo, sugerencia y el boton de envío. Esto lo recibiría a mi correo.
-               
-        -->
         <footer>
             <nav>
                 <a href="pages/quienes_somos.php">Quienes somos</a> -

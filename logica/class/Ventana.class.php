@@ -30,7 +30,7 @@ class Ventana {
                 $nombre_servicio = str_replace('_', ' ', $servicio);
                 $fila =  '<div class="fila">';
                     $fila .=  '<figure class="'. $nombre_empresa .'">';
-                        $fila .=  '<img class="imagen_empresa" src="../media/img/img_'.$nombre_empresa.'.png" alt="img_'.$nombre_empresa.'" height="50" width="50">';
+                        $fila .=  '<img class="imagen_empresa" src="../media/img/img_'.$nombre_empresa.'.png" alt="img_'.$nombre_empresa.'">';
                         $fila .=  '<figcaption class="servicio">'. $nombre_servicio.'</figcaption>';
                     $fila .=  '</figure>';
                     $fila .=  '<div class="precio">'.$precio.' €</div>';
