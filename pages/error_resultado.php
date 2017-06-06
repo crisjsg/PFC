@@ -24,8 +24,10 @@ and open the template in the editor.
                 </ul>
             </nav>
         </header>
-        <?php
-        // Poner aquí información de la API Postmen y hablar del uso de Google API (Places)
-        ?>
+        
+        <h2>Ha habido algún problema con tú peticion :(</h2>
+        <h3>Por favor, vuelva a la pagina principal e intentelo de nuevo</h3>
+        
+        <p>¡Recuerde de introducir datos reales y/o no dejar ningun resultado vacío en los formularios!</p>
     </body>
 </html>

@@ -1,0 +1,28 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 06-jun-2017, 17:00:46
+    Author     : Cristian
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Lato|Libre+Baskerville');
+
+/*
+font-family: 'Lato', sans-serif; Contenidos
+font-family: 'Libre Baskerville', serif; Titulos
+*/
+
+h1, h2, h3, h4, h5, h6{
+    font-family: 'Libre Baskerville', serif;
+}
+
+body{
+    font-family: 'Lato', sans-serif;
+}
+
+.servicio{
+    text-transform: uppercase;
+}

@@ -25,7 +25,7 @@ and open the template in the editor.
             </nav>
         </header>
         <?php
-        // Poner aquí información de la API Postmen y hablar del uso de Google API (Places)
+        // Poner una breve descripción del proyecto y presentación personal aquí.
         ?>
     </body>
 </html>

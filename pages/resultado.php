@@ -16,21 +16,38 @@ $datos_usuario = filtrar_datos_post($_POST);
     <head>
         <meta charset="UTF-8">
         <title>Cheapsy Deliver</title>
+        <link rel="stylesheet" type="text/css" href="/estilos/fuentes.css">
+        <link rel="stylesheet" type="text/css" href="/estilos/header.css">
+        <link rel="stylesheet" type="text/css" href="/estilos/botones.css">
     </head>
     <body>
-        <div id="contenedor">
-            <header>
+        <header>
+            <hgroup>
                 <h1>Cheapsy Deliver</h1>
-                <h2>Comparar, escoger, enviar</h2>
-            </header>
+                <h2 id="tagline">Comparar, escoger, enviar</h2>
+            </hgroup>
+            <nav>
+                <ul>
+                    <li><a href="/index.php">Home</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div id="contenedor">
             <div id="resultado">
                 <h2>Resultado</h2>
 <?php
 include '../logica/peticion.php';
 
 $ventana = new Ventana($precios_correctos);
-$ventana->construir_ventana();
 
+if(empty($ventana->get_datos_a_mostrar())){
+    header('Location: error_resultado.php');
+}else{
+    $ventana->construir_ventana();
+}
+
+
+//var_dump($ventana);
 ?>
                 
             </div>

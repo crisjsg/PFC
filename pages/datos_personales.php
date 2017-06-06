@@ -4,14 +4,9 @@
         <meta charset="UTF-8">
         <title>Cheapsy Deliver</title>
         <meta charset="utf-8">
-        <style>
-            /* Optional: Makes the sample page fill the window. */
-            html, body {
-                height: 100%;
-                margin: 0 0 10px 10px;
-                padding: 0;
-            }
-        </style>
+        <link rel="stylesheet" type="text/css" href="/estilos/fuentes.css">
+        <link rel="stylesheet" type="text/css" href="/estilos/header.css">
+        <link rel="stylesheet" type="text/css" href="/estilos/botones.css">
         <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
         <style>
             #autocompletarDestino, #autocompletarOrigen{
@@ -27,8 +22,15 @@
         
         ?>
         <header>
-            <h1>Cheapsy Deliver</h1>
-            <h2>Comparar, escoger, enviar</h2>
+            <hgroup>
+                <h1>Cheapsy Deliver</h1>
+                <h2 id="tagline">Comparar, escoger, enviar</h2>
+            </hgroup>
+            <nav>
+                <ul>
+                    <li><a href="/index.php">Home</a></li>
+                </ul>
+            </nav>
         </header>
         <h2>¡Estas a un paso de comparar!</h2>
         <p>Solo necesitamos esta información para concretar un pelín más y mostrar un precio más preciso para tu envío.</p>
@@ -58,7 +60,7 @@
             Email remitente: <input type="email" name="email_remitente" /><br>
             Email destinatario: <input type="email" name="email_destinatario" />
             <br>
-            <input name="submit" type="submit" value="Buscar">
+            <input class="boton" name="submit" type="submit" value="Buscar">
         </form>
 
         <script src="../js/autocompletarLocalizacion.js"></script>

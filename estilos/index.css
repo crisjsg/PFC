@@ -1,0 +1,78 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 06-jun-2017, 18:03:49
+    Author     : Cristian
+*/
+
+div{
+    border: solid red 1px;
+}
+
+
+/* ESTILOS DEL FORMULARIO */
+
+#formulario{
+        padding-left: 5%;
+    width: 40%;
+    height: 18.3rem;
+    float: left;
+    
+}
+
+form{
+    padding-left: 2%;
+    float: left;
+    margin-right: 15rem;
+}
+
+/*Elementos del formulario*/
+form > label{
+    padding-left: 2%;
+    margin-bottom: 5px;
+}    
+
+form > label > textarea{
+    margin-left: 25px;
+}
+
+#alto{
+    margin-left: 45px;
+}
+
+#ancho{
+    margin-left: 30px;
+}
+
+#profundo{
+    margin-left: 9px;
+}
+
+#peso{
+    margin-left: 41px;
+}
+
+#boton_enviar{
+    position: relative;
+    left: 60%;
+}
+
+/* ESTILOS LISTADO PAQUETES */
+#envio{
+    float: left;    
+}
+
+#envio > h3{
+    padding-top: 0px;
+}
+
+
+
+/*ESTILOS EMPRESAS TRANPORTISTAS*/
+
+#tranportistas{
+    clear: both;
+}

@@ -1,0 +1,82 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 06-jun-2017, 17:53:00
+    Author     : Cristian
+*/
+html, body {
+ margin: 0;
+}
+
+header{
+    border-bottom: solid black medium;
+    height: 7rem;
+    padding-top: 1%;
+}
+
+header > hgroup{
+    float: left;
+}
+
+/*Estilos titulo de la pagina y tagline*/
+
+h1{
+    padding-left: 10px;
+}
+
+#tagline{
+    margin-top: -6%;
+    font-size: 0.75rem;
+    padding-left: 20px;
+}
+
+/* ELEMENTOS DE NAVEGACION */
+
+    /* Estilos en los elementos del NAV del header*/
+header > nav > ul > li{
+    display: block;
+    float: left;
+    border-right: solid black 2px;
+    text-decoration: none;
+}
+
+/*Estilos en los hipervinculos del menú de navegación*/
+header > nav > ul > li > a{
+    text-decoration: none;
+    padding: 0.25rem 1rem;
+    margin: 0 0.25rem;
+}
+
+
+/*Posicionamiento menú de navegación*/
+
+header > nav{
+    position: relative;
+    top: 60%;
+    left: 35%;
+}
+
+/* COLORES */
+
+header{
+    background-color: #FFB74F;
+}
+
+
+header > nav > ul > li > a{
+    color: black;
+}
+
+
+header > nav > ul > li > a:hover{
+    color: white;
+    background: #407BB4;
+    padding: 0.5rem 1rem;
+}
+
+
+
+
