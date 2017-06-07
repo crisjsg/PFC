@@ -15,11 +15,6 @@ and open the template in the editor.
         <link rel="stylesheet" type="text/css" href="/estilos/botones.css">
         <link rel="stylesheet" type="text/css" href="/estilos/empresas_transportistas.css">
         <link rel="stylesheet" type="text/css" href="/estilos/index.css">
-        <style>
-            #numero_paquete{
-                display: none;
-            }
-        </style>
     </head>
     <body>
         <?php
@@ -121,9 +116,9 @@ and open the template in the editor.
                     <li id="aramex"><a href="https://www.aramex.com/"><img src="/media/img/img_aramex_indice.png"></a></li>
                     <li id="tnt"><a href="https://www.tnt.com/express/es_es/site/home.html"><img src="/media/img/img_tnt_indice.png"></a></li>
                     <li id="bring"><a href="http://www.bring.com/"><img src="/media/img/img_bring_indice.png"></a></li>
-                    <li id="dhl"><a href="http://www.dhl.es/"></a><img src="/media/img/img_dhl_indice.png"></li>
+                    <li id="dhl"><a href="http://www.dhl.es/"><img src="/media/img/img_dhl_indice.png"></a></li>
                     <li id="fedex"><a href="https://www.fedex.com/"><img src="/media/img/img_fedex_indice.png"></a></li>
-                    <li id="yodel"><a href="http://www.yodel.co.uk/"></a><img src="/media/img/img_yodel_indice.png"></li>
+                    <li id="yodel"><a href="http://www.yodel.co.uk/"><img src="/media/img/img_yodel_indice.png"></a></li>
                 </ul>
             </div>   
         </div>

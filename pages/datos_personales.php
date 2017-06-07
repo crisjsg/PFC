@@ -7,19 +7,14 @@
         <link rel="stylesheet" type="text/css" href="/estilos/fuentes.css">
         <link rel="stylesheet" type="text/css" href="/estilos/header.css">
         <link rel="stylesheet" type="text/css" href="/estilos/botones.css">
+        <link rel="stylesheet" type="text/css" href="/estilos/datos_personales.css">
         <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
-        <style>
-            #autocompletarDestino, #autocompletarOrigen{
-                width: 200px;
-            }
-        </style>
 
     </head>
     <body>
-        <?php 
+        <?php
         require_once '../logica/class/Paquete.class.php';
-        require_once '../logica/session.php'; 
-        
+        require_once '../logica/session.php';
         ?>
         <header>
             <hgroup>
@@ -32,36 +27,42 @@
                 </ul>
             </nav>
         </header>
-        <h2>¡Estas a un paso de comparar!</h2>
-        <p>Solo necesitamos esta información para concretar un pelín más y mostrar un precio más preciso para tu envío.</p>
-        <form name="formulario_datos_usuario" action="resultado.php" method="POST">
-            <h3>Origen</h3>
-            Dirección: <br>
-            <input id="autocompletarOrigen" placeholder="Introduce tu dirección de origen" type="text" onkeydown='selecting_key(event);'>
-            <br>
-            Ciudad*: <input type="text" name="ciudad_origen" id="ciudad_origen" disabled="true" required/> <br>
-            Código postal*: <input type="text" name="codigo_postal_origen" id="codigo_postal_origen" disabled="true" required/><br>
-            Calle: <input type="text" name="calle_origen" id="calle_origen" disabled="true"/><br>
-            País: <input type="text" name="pais_origen" id="pais_origen" disabled="true"/><br>
+        <div id="contenido">
+            <h2 class="titulo_pagina">¡Estas a un paso de comparar!</h2>
+            <p class="titulo_pagina">Solo necesitamos esta información para concretar un pelín más y mostrar un precio más preciso para tu envío.</p>
+            <form id="formulario_datos_usuario" name="formulario_datos_usuario" action="resultado.php" method="POST">
+                <fieldset id="origen">
+                    <h3>Origen</h3>
+                    Dirección: <br>
+                    <input id="autocompletarOrigen" class="direccion" placeholder="Introduce tu dirección de origen" type="text" onkeydown='selecting_key(event);'>
+                    <br>
+                    Ciudad*: <input class="ciudad" type="text" name="ciudad_origen" id="ciudad_origen" disabled="true" required/> <br>
+                    Código postal*: <input type="text" name="codigo_postal_origen" id="codigo_postal_origen" disabled="true" required/><br>
+                    Calle: <input class="calle" type="text" name="calle_origen" id="calle_origen" disabled="true"/><br>
+                    País: <input class="pais"type="text" name="pais_origen" id="pais_origen" disabled="true"/><br>
+                </fieldset>
+                <fieldset id="destino">
+                    <h3>Destino</h3>
+                    Dirección: <br>
+                    <input id="autocompletarDestino" class="direccion" placeholder="Introduce tu dirección de destino" type="text" onkeydown='selecting_key(event);'>
+                    <br>
+                    Ciudad*: <input class="ciudad" type="text" name="ciudad_destino" id="ciudad_destino" disabled="true"/> <br>
+                    Código postal*: <input type="text" name="codigo_postal_destino" id="codigo_postal_destino" disabled="true"/><br>
+                    Calle: <input class="calle" type="text" name="calle_destino" id="calle_destino" disabled="true"/><br>
+                    País: <input class="pais" type="text" name="pais_destino" id="pais_destino" disabled="true"/><br>
+                </fieldset>
+                <fieldset id="datos_personales">
+                    <h3>Datos personales</h3>
+                    Nombre: <input id="nombre" type="text" name="nombre" /><br>
+                    Apellido: <input id="apellido" type="text" name="apellido"/><br>
+                    Telefono: <input id="telefono" type="tel" name="telefono" /><br>
+                    Email remitente: <input id="email_remitente" type="email" name="email_remitente" /><br>
+                    Email destinatario: <input type="email" name="email_destinatario" /><br>
+                </fieldset>
+                <input id="boton_buscar" class="boton" name="submit" type="submit" value="Buscar">
+            </form>  
+        </div>
 
-            <h3>Destino</h3>
-            Dirección: <br>
-            <input id="autocompletarDestino" placeholder="Introduce tu dirección de destino" type="text" onkeydown='selecting_key(event);'>
-            <br>
-            Ciudad*: <input type="text" name="ciudad_destino" id="ciudad_destino" disabled="true"/> <br>
-            Código postal*: <input type="text" name="codigo_postal_destino" id="codigo_postal_destino" disabled="true"/><br>
-            Calle: <input type="text" name="calle_destino" id="calle_destino" disabled="true"/><br>
-            País: <input type="text" name="pais_destino" id="pais_destino" disabled="true"/><br>
-
-            <h3>Datos personales</h3>
-            Nombre: <input type="text" name="nombre" /><br>
-            Apellido: <input type="text" name="apellido"/><br>
-            Telefono: <input type="tel" name="telefono" /><br>
-            Email remitente: <input type="email" name="email_remitente" /><br>
-            Email destinatario: <input type="email" name="email_destinatario" />
-            <br>
-            <input class="boton" name="submit" type="submit" value="Buscar">
-        </form>
 
         <script src="../js/autocompletarLocalizacion.js"></script>
         <script src="/js/formulario.js"></script>

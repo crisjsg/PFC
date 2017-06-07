@@ -1,0 +1,92 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 07-jun-2017, 22:01:32
+    Author     : Cristian
+*/
+
+/*
+*{
+    border: solid red 1px;
+}
+*/
+/*ESTILOS GENERALES*/
+.titulo_pagina{
+    padding-left: 3%;
+}
+
+
+/*ESTILOS PARA EL FORMULARIO DE DATOS DE USUARIO*/
+#formulario_datos_usuario{
+    padding-top: 1%;
+    padding-left: 5%;
+    width: 95%;
+    height: 26.3rem;
+
+}
+
+/*ESTILOS DE LOS FIELDSETS*/
+
+fieldset{
+    border: none;
+    margin-right: 40px;
+}
+
+#autocompletarDestino, #autocompletarOrigen{
+    width: 278px;
+}
+
+#origen{
+    float: left;
+    border-right: solid black 1px;
+}
+
+#destino{
+    float: left;
+    border-right: solid black 1px;
+}
+
+#datos_personales{
+    float: left;
+}
+
+.ciudad{
+    margin-left: 46px;
+}
+
+.calle{
+    margin-left: 67px;
+}
+
+.pais{
+    margin-left: 74px;
+}
+
+#nombre{
+    margin-left: 68px;
+}
+
+#apellido{
+    margin-left: 68px;
+}
+
+#telefono{
+    margin-left: 66px;
+}
+
+#email_remitente{
+    margin-left: 15px;
+}
+
+/*Boton buscar*/
+
+#boton_buscar{
+    clear: both;
+    position: relative;
+    top: 60%;
+    left: -10%;
+    font-size: 1.5rem;
+}

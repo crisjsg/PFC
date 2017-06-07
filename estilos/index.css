@@ -7,16 +7,6 @@ and open the template in the editor.
     Created on : 06-jun-2017, 18:03:49
     Author     : Cristian
 */
-/*
-div{
-    border: solid red 1px;
-}
-
-
-*{
-    border: solid red 1px;
-}
-*/
 
 html, body {
     margin: 0;
@@ -41,6 +31,10 @@ form{
 }
 
 /*Elementos del formulario*/
+
+#numero_paquete{
+    display: none;
+}
 form > label{
     padding-left: 2%;
     margin-bottom: 5px;
