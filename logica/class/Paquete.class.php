@@ -80,11 +80,11 @@ class Paquete {
         $descripcion = $this->get_descripcion();
 
         $medidas_paquete = array(
-            "anchura" => $ancho,
-            "altura" => $alto,
-            "profundidad" => $profundo,
-            "peso" => $peso,
-            "descripcion" => $descripcion);
+            "Anchura" => $ancho,
+            "Altura" => $alto,
+            "Profundidad" => $profundo,
+            "Peso" => $peso,
+            "Descripcion" => $descripcion);
 
         return $medidas_paquete;
     }
@@ -97,7 +97,7 @@ class Paquete {
         $medidas = '';
         $paquete = $this->get_medidas_paquete();
         foreach ($paquete as $dato => $valor) {
-            $medidas .= $dato . ': ' . $valor . ' ';
+            $medidas .= '<span class="medida">' . $dato . ': ' . $valor . '</span> ';
         }
         
         return $medidas;

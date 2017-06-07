@@ -7,20 +7,31 @@ and open the template in the editor.
     Created on : 06-jun-2017, 18:03:49
     Author     : Cristian
 */
-
+/*
 div{
     border: solid red 1px;
 }
 
 
+*{
+    border: solid red 1px;
+}
+*/
+
+html, body {
+    margin: 0;
+    height: 100%;
+}
+
 /* ESTILOS DEL FORMULARIO */
 
 #formulario{
-        padding-left: 5%;
+    padding-top: 1%;
+    padding-left: 5%;
     width: 40%;
-    height: 18.3rem;
+    height: 26.3rem;
     float: left;
-    
+
 }
 
 form{
@@ -62,17 +73,27 @@ form > label > textarea{
 
 /* ESTILOS LISTADO PAQUETES */
 #envio{
-    float: left;    
+    float: left;
+    padding-top: 1%;
 }
 
 #envio > h3{
     padding-top: 0px;
 }
 
+#paquetes{
+    border: solid black medium;
+    background-color: #6799CA;
+    color: white;
+}
 
+.imagen_paquete{
+    position: relative;
+    top: 6px;
+    left: 0px;
+    margin-right: 10px;
+}
 
-/*ESTILOS EMPRESAS TRANPORTISTAS*/
-
-#tranportistas{
-    clear: both;
+.medida{
+    margin-right: 10px;
 }

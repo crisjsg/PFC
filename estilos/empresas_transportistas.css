@@ -1,0 +1,102 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 07-jun-2017, 17:49:10
+    Author     : Cristian
+*/
+
+/*ESTILOS EMPRESAS TRANPORTISTAS*/
+
+#tranportistas{
+    clear: both;
+    padding-left: 5%;
+}
+
+#empresas{
+    position: relative;
+    left: 21%;
+    max-width: 800px;
+    margin: 2% 0 10% 0;
+}
+
+#empresas > li{
+    list-style-type: none;
+    display: inline-block;
+    margin: 0 35px 50px 10px;
+}
+
+
+#aramex{
+    opacity: 0.4;
+    filter: alpha(opacity=40);
+    transition: opacity 0.5s ease-in;
+}
+
+#aramex:hover{
+    opacity: 1;
+    filter: alpha(opacity=100);
+    
+}
+
+#bring{
+    opacity: 0.4;
+    filter: alpha(opacity=40);
+    transition: opacity 0.5s ease-in;
+}
+
+#bring:hover{
+    opacity: 1;
+    filter: alpha(opacity=100);
+    
+}
+
+#fedex{
+    opacity: 0.4;
+    filter: alpha(opacity=40);
+    transition: opacity 0.5s ease-in;
+}
+
+#fedex:hover{
+    opacity: 1;
+    filter: alpha(opacity=100);
+    
+}
+
+#tnt{
+    opacity: 0.4;
+    filter: alpha(opacity=40);
+    transition: opacity 0.5s ease-in;
+}
+
+#tnt:hover{
+    opacity: 1;
+    filter: alpha(opacity=100);
+    
+}
+
+#dhl{
+    opacity: 0.4;
+    filter: alpha(opacity=40);
+    transition: opacity 0.5s ease-in;
+}
+
+#dhl:hover{
+    opacity: 1;
+    filter: alpha(opacity=100);
+    
+}
+
+#yodel{
+   opacity: 0.4;
+    filter: alpha(opacity=40);
+    transition: opacity 0.5s ease-in; 
+}
+#yodel:hover{
+    opacity: 1;
+    filter: alpha(opacity=100);
+    
+}
+

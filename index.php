@@ -11,7 +11,9 @@ and open the template in the editor.
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <link rel="stylesheet" type="text/css" href="/estilos/fuentes.css">
         <link rel="stylesheet" type="text/css" href="/estilos/header.css">
+        <link rel="stylesheet" type="text/css" href="/estilos/footer.css">
         <link rel="stylesheet" type="text/css" href="/estilos/botones.css">
+        <link rel="stylesheet" type="text/css" href="/estilos/empresas_transportistas.css">
         <link rel="stylesheet" type="text/css" href="/estilos/index.css">
         <style>
             #numero_paquete{
@@ -68,14 +70,15 @@ and open the template in the editor.
                     <input class="boton" id="boton_enviar" type="submit" value="Añadir paquete" name="paquetes" />
                 </form>
             </div>
-            
-                <?php
-                //Si hay datos en la variable 'paquetes' en el envio por POST haz...
 
-                if (isset($_POST['paquetes']) && ($_POST['paquetes'] != "")) {
-                    ?>
-                    <div id="envio">
-                        <h3>Paquetes</h3>
+            <?php
+            //Si hay datos en la variable 'paquetes' en el envio por POST haz...
+
+            if (isset($_POST['paquetes']) && ($_POST['paquetes'] != "")) {
+                ?>
+                <div id="envio">
+                    <h3>Paquetes</h3>
+                    <div id="paquetes">
                         <?php
                         /*
                          * $_POST['paquetes'] -> Contiene los paquetes que posteriormente se guardaran en 
@@ -95,10 +98,10 @@ and open the template in the editor.
 
                         for ($i = 0; $i < count($_SESSION['ses_paquetes']); $i++) {
                             $medidas_paquete = $_SESSION['ses_paquetes'][$i]->mostrar_medidas_paquete();
-                            echo '<div class="paquete">'
+                            echo '<div class="paquete"><img class="imagen_paquete" src="../media/img/icono_paquete.png" alt="icono_paquete">'
                             . '<span>'
                             . $medidas_paquete .
-                            '</span><span id="numero_paquete">' . $i . '</span><button onclick="quitarPaquete(this)">X</button>'
+                            '</span><span id="numero_paquete">' . $i . '</span><button class="boton" onclick="quitarPaquete(this)">X</button>'
                             . '</div>';
                         }
                         echo '<br>';
@@ -107,18 +110,20 @@ and open the template in the editor.
                         $_POST['paquetes'] = NULL;
                         session_destroy();
                     }
-                    ?>
+                    ?>    
                 </div>
+
+            </div>
             <div id="tranportistas">
                 <h3>Empresas transportistas</h3>
-                <p>Empresas tranportistas con las que trabajamos</p><hr>
+                <p>Empresas tranportistas con las que trabajamos</p>
                 <ul id="empresas">
-                    <li><a href="https://www.aramex.com/">ARAMEX</a></li>
-                    <li><a href="https://www.tnt.com/express/es_es/site/home.html">TNT</a></li>
-                    <li><a href="http://www.bring.com/">Bring</a></li>
-                    <li><a href="http://www.dhl.es/">DHL</a></li>
-                    <li><a href="https://www.fedex.com/">FedEx</a></li>
-                    <li><a href="http://www.yodel.co.uk/">Yodel</a></li>
+                    <li id="aramex"><a href="https://www.aramex.com/"><img src="/media/img/img_aramex_indice.png"></a></li>
+                    <li id="tnt"><a href="https://www.tnt.com/express/es_es/site/home.html"><img src="/media/img/img_tnt_indice.png"></a></li>
+                    <li id="bring"><a href="http://www.bring.com/"><img src="/media/img/img_bring_indice.png"></a></li>
+                    <li id="dhl"><a href="http://www.dhl.es/"></a><img src="/media/img/img_dhl_indice.png"></li>
+                    <li id="fedex"><a href="https://www.fedex.com/"><img src="/media/img/img_fedex_indice.png"></a></li>
+                    <li id="yodel"><a href="http://www.yodel.co.uk/"></a><img src="/media/img/img_yodel_indice.png"></li>
                 </ul>
             </div>   
         </div>
@@ -126,9 +131,9 @@ and open the template in the editor.
 
         <footer>
             <nav>
-                <a href="pages/quienes_somos.php">Quienes somos</a> -
-                <a href="pages/tecnologias.php">Tecnologias</a> -
-                <a href="pages/contacto.php">Contactanos</a>
+                <a href="pages/sobre_nosotros.php">Sobre nosotros</a> -
+                <a href="pages/consejos.php">Consejos</a> -
+                <a href="pages/tecnologias.php">Tecnologías</a> -
             </nav>
         </footer>
 
