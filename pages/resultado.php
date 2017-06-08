@@ -19,6 +19,7 @@ $datos_usuario = filtrar_datos_post($_POST);
         <link rel="stylesheet" type="text/css" href="/estilos/fuentes.css">
         <link rel="stylesheet" type="text/css" href="/estilos/header.css">
         <link rel="stylesheet" type="text/css" href="/estilos/botones.css">
+        <link rel="stylesheet" type="text/css" href="/estilos/resultado.css">
     </head>
     <body>
         <header>
@@ -32,7 +33,7 @@ $datos_usuario = filtrar_datos_post($_POST);
                 </ul>
             </nav>
         </header>
-        <div id="contenedor">
+        <div id="contenido">
             <div id="resultado">
                 <h2>Resultado</h2>
 <?php

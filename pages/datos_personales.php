@@ -33,31 +33,31 @@
             <form id="formulario_datos_usuario" name="formulario_datos_usuario" action="resultado.php" method="POST">
                 <fieldset id="origen">
                     <h3>Origen</h3>
-                    Dirección: <br>
+                    <label>Dirección: <br>
                     <input id="autocompletarOrigen" class="direccion" placeholder="Introduce tu dirección de origen" type="text" onkeydown='selecting_key(event);'>
-                    <br>
-                    Ciudad*: <input class="ciudad" type="text" name="ciudad_origen" id="ciudad_origen" disabled="true" required/> <br>
-                    Código postal*: <input type="text" name="codigo_postal_origen" id="codigo_postal_origen" disabled="true" required/><br>
-                    Calle: <input class="calle" type="text" name="calle_origen" id="calle_origen" disabled="true"/><br>
-                    País: <input class="pais"type="text" name="pais_origen" id="pais_origen" disabled="true"/><br>
+                    </label><br>
+                    <label>Ciudad*: <input class="ciudad" type="text" name="ciudad_origen" id="ciudad_origen" disabled="true" required/> </label><br>
+                    <label>Código postal*: <input type="text" name="codigo_postal_origen" id="codigo_postal_origen" disabled="true" required/></label><br>
+                    <label>Calle: <input class="calle" type="text" name="calle_origen" id="calle_origen" disabled="true"/></label><br>
+                    <label>País: <input class="pais"type="text" name="pais_origen" id="pais_origen" disabled="true"/></label><br>
                 </fieldset>
                 <fieldset id="destino">
                     <h3>Destino</h3>
-                    Dirección: <br>
+                    <label>Dirección: <br>
                     <input id="autocompletarDestino" class="direccion" placeholder="Introduce tu dirección de destino" type="text" onkeydown='selecting_key(event);'>
-                    <br>
-                    Ciudad*: <input class="ciudad" type="text" name="ciudad_destino" id="ciudad_destino" disabled="true"/> <br>
-                    Código postal*: <input type="text" name="codigo_postal_destino" id="codigo_postal_destino" disabled="true"/><br>
-                    Calle: <input class="calle" type="text" name="calle_destino" id="calle_destino" disabled="true"/><br>
-                    País: <input class="pais" type="text" name="pais_destino" id="pais_destino" disabled="true"/><br>
+                    </label><br>
+                    <label>Ciudad*: <input class="ciudad" type="text" name="ciudad_destino" id="ciudad_destino" disabled="true"/></label> <br>
+                    <label>Código postal*: <input type="text" name="codigo_postal_destino" id="codigo_postal_destino" disabled="true"/></label><br>
+                    <label>Calle: <input class="calle" type="text" name="calle_destino" id="calle_destino" disabled="true"/></label><br>
+                    <label>País: <input class="pais" type="text" name="pais_destino" id="pais_destino" disabled="true"/></label><br>
                 </fieldset>
                 <fieldset id="datos_personales">
                     <h3>Datos personales</h3>
-                    Nombre: <input id="nombre" type="text" name="nombre" /><br>
-                    Apellido: <input id="apellido" type="text" name="apellido"/><br>
-                    Telefono: <input id="telefono" type="tel" name="telefono" /><br>
-                    Email remitente: <input id="email_remitente" type="email" name="email_remitente" /><br>
-                    Email destinatario: <input type="email" name="email_destinatario" /><br>
+                    <label>Nombre: <input id="nombre" type="text" name="nombre" /></label><br>
+                    <label>Apellido: <input id="apellido" type="text" name="apellido"/></label><br>
+                    <label>Telefono: <input id="telefono" type="tel" name="telefono" /></label><br>
+                    <label>Email remitente: <input id="email_remitente" type="email" name="email_remitente" /></label><br>
+                    <label>Email destinatario: <input type="email" name="email_destinatario" /></label><br>
                 </fieldset>
                 <input id="boton_buscar" class="boton" name="submit" type="submit" value="Buscar">
             </form>  
