@@ -11,7 +11,7 @@ and open the template in the editor.
         <link rel="stylesheet" type="text/css" href="/estilos/fuentes.css">
         <link rel="stylesheet" type="text/css" href="/estilos/header.css">
         <link rel="stylesheet" type="text/css" href="/estilos/botones.css">
-        <link rel="stylesheet" type="text/css" href="/estilos/consejos.css">
+        <link rel="stylesheet" type="text/css" href="/estilos/estilos_generales.css">
     </head>
     <body>
         <header>
@@ -25,7 +25,7 @@ and open the template in the editor.
                 </ul>
             </nav>
         </header>
-        <section id="consejos">
+        <section id="contenido">
             <h2>Consejos</h2>
             <article>
                 <h3>Embalaje</h3>
