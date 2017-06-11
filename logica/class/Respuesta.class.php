@@ -61,7 +61,10 @@ class Respuesta {
         }
     }
 
-    //Revisar...
+    /**
+     * Metodo encargado de sacar los precios del JSON de respuesta
+     * @return array
+     */
     public function sacar_precios_respuesta() {
         $precios = array();
 

@@ -79,6 +79,11 @@ form > label > textarea{
     border: solid black medium;
     background-color: #6799CA;
     color: white;
+    
+}
+
+div#paquetes{
+    min-width: 524px;
 }
 
 .imagen_paquete{

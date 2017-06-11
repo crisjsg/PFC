@@ -11,6 +11,7 @@ and open the template in the editor.
         <link rel="stylesheet" type="text/css" href="/estilos/fuentes.css">
         <link rel="stylesheet" type="text/css" href="/estilos/header.css">
         <link rel="stylesheet" type="text/css" href="/estilos/botones.css">
+        <link rel="stylesheet" type="text/css" href="/estilos/estilos_generales.css">
     </head>
     <body>
         <header>
@@ -25,9 +26,12 @@ and open the template in the editor.
             </nav>
         </header>
         
-        <h2>Ha habido algún problema con tú peticion :(</h2>
+        <div id="contenido">
+            <h2>Ha habido algún problema con tú peticion :(</h2>
         <h3>Por favor, vuelva a la pagina principal e intentelo de nuevo</h3>
         
         <p>¡Recuerde de introducir datos reales y/o no dejar ningun resultado vacío en los formularios!</p>
+        </div>
+        
     </body>
 </html>
